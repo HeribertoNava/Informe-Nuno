@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:fontFamily="@font/alfa_slab_one"
+                android:text="Ventas"
+                android:textSize="24sp"
+
+                android:textStyle="bold" />
+
+            <!-- Seleccionar producto -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins"
+                android:text="Seleccionar producto"
+                android:textSize="13dp"
+                android:textStyle="bold" />
+
+            <!-- Spinner para seleccionar productos -->
+            <Spinner
+                android:id="@+id/spProducts"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:padding="2dp"
+                android:layout_weight="1"
+                />
+
+            <!-- Tabla de compra -->
+            <TableLayout
+                android:id="@+id/tabla_productos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:stretchColumns="1">
+
+                <!-- Header de la tabla -->
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#EEEEEE"
+                    android:padding="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:fontFamily="@font/poppins"
+                        android:text="Producto"
+                        android:textSize="13dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:fontFamily="@font/poppins"
+                        android:text="Cantidad"
+                        android:textSize="13dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:fontFamily="@font/poppins"
+                        android:text="Precio"
+                        android:textSize="13dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:fontFamily="@font/poppins"
+                        android:text="Total"
+                        android:textSize="13dp"
+                        android:textStyle="bold" />
+
+                </TableRow>
+
+            </TableLayout>
+
+            <!-- Total general -->
+
+            <TextView
+                android:id="@+id/tvTotalGeneral"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/poppins"
+                android:text="Total General: $0"
+                android:textSize="13sp"
+                android:layout_marginRight="10dp"
+                android:textStyle="bold" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="16dp">
+
+                <!-- Cantidad recibida del cliente -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginEnd="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins"
+                        android:text="Recibido"
+                        android:textSize="13dp" />
+
+                    <EditText
+                        android:id="@+id/recibido"
+                        android:layout_width="120dp"
+                        android:layout_height="30dp"
+                        android:background="@color/material_dynamic_neutral95"
+                        android:fontFamily="@font/poppins"
+                        android:inputType="number"
+                        android:textSize="13dp"
+                        android:padding="4dp" />
+                </LinearLayout>
+
+                <!-- Cambio del cliente -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins"
+                        android:text="Cambio"
+                        android:textSize="13dp" />
+
+                    <EditText
+                        android:id="@+id/cambio"
+                        android:layout_width="120dp"
+                        android:layout_height="30dp"
+                        android:background="@color/material_dynamic_neutral95"
+                        android:inputType="number"
+                        android:textSize="13dp"
+                        android:enabled="false"
+                        android:padding="4dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Botones de Finalizar y Canclear -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="8dp">
+                    <Button
+                        android:id="@+id/btnFinalizar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:text="Finalizar"
+                        android:textSize="13dp"
+                        app:cornerRadius="9dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="8dp">
+                    <Button
+                        android:id="@+id/btnCancelar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:text="Cancelar"
+                        android:textSize="13dp"
+                        app:cornerRadius="9dp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </HorizontalScrollView>
+</ScrollView>
